@@ -3,7 +3,7 @@ def selection_sort( arr ):
     # creates new array in order to not mutate the original
     new_array = [] + arr
     # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
+    for i in range(0, len(arr) - 1): # O(n^2)
         minIndex = i
         for j in range(i + 1, len(new_array)):
             if new_array[j] < new_array[minIndex]:
@@ -23,6 +23,26 @@ def bubble_sort( arr ):
             if new_array[j] > new_array[j + 1]:
                 new_array[j], new_array[j+1] = new_array[j+1], new_array[j]
     return new_array
+
+# Optimized bubble sort: (mutates)
+def bubbleSort(A):
+    length = len(A)
+
+    # traverse through all array elements
+    for i in range(n):
+        swapped = False
+
+        # last i elements are already in place
+        for j in range(0, length - i - 1):
+
+            # traverse the list from 0 to length - i - 1
+            # swap if the element found is greater than the next element
+            if A[j] > A[j+1]:
+                A[j], A[j+1] = A[j+1], A[j]
+                swapped = True
+        # if no two elements were swapped by inner loop, then break
+        if swapped == False:
+            break
 
 
 # STRETCH: implement the Count Sort function below
